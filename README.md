@@ -5,7 +5,3 @@ I was thinking that the command that is run should be flexible, such that you co
 after. 
 
 I have a working version in my dotfiles, this is more to document how this would be shared in a flexible, portable way.
-
-
-
-

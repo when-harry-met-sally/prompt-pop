@@ -1,5 +1,5 @@
 # PromptPop
-![Demo Animation](assets/demo.gif)
+![Demo Animation](https://imgur.com/a/nJrYkn1)
 ## Overview
 PromptPop is a utility for shell users who frequently edit their command line input within a full-fledged text editor. It captures the current command line buffer, opens it in Neovim within a Tmux popup window, and upon closing, applies any changes back to the command line buffer. This tool is especially handy for complex commands or multiline input.
 

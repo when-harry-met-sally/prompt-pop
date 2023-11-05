@@ -2,7 +2,7 @@ prompt_pop() {
   local typed_command=$BUFFER
 
   # Allow users to define their own temp file path via an environment variable
-  local temp_file="${PROMPT_POP_TEMP_FILE:-"/tmp/prompt_pop.zsh"}"
+  local temp_file="${PROMPT_POP_FILE:-"/tmp/prompt_pop.zsh"}"
 
   echo $typed_command > $temp_file
   

@@ -5,7 +5,7 @@ PromptPop is a utility for shell users who frequently edit their command line in
 
 ## Features
 - Opens your current shell buffer in Neovim within a Tmux popup.
-- Allows customization of the Neovim command and the temporary file path using environment variables.
+- Allows customization of the Neovim command and the file path using environment variables.
 - Easy to install and configure.
 
 ## Installation
@@ -30,17 +30,17 @@ source ~/.zshrc
 ## Configuration
 PromptPop works out of the box, but you can customize its behavior through environment variables.
 
-### Custom Temporary File Path
-To change the default temporary file path used by PromptPop:
+### Custom File Path
+To change the default file path used by PromptPop:
 
 ```sh
-export PROMPT_POP_TEMP_FILE="/custom/path/to/temp_file.zsh"
+export PROMPT_POP_FILE="/custom/path/to/prompt_pop.zsh"
 ```
 ### Custom Neovim Command
 To customize the Neovim command (for example, to disable Copilot when opening the popup):
 
 ```sh
-export PROMPT_POP_COMMAND="tmux display-popup -E -w 80% -h 80% nvim $PROMPT_POP_TEMP_FILE"
+export PROMPT_POP_COMMAND="tmux display-popup -E -w 80% -h 80% nvim $PROMPT_POP_FILE"
 ```
 Add the above lines to your .zshrc file before the source command of the PromptPop script.
 

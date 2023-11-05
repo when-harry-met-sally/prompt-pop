@@ -14,7 +14,7 @@ PromptPop is a utility for shell users who frequently edit their command line in
 To install PromptPop, clone the repository and source the script in your `.zshrc` file:
 ```sh
 git clone https://github.com/your-username/prompt_pop.git
-echo "source $(pwd)/prompt_pop/prompt_pop.zsh" >> ~/.zshrc
+echo "source $(pwd)/prompt-pop/prompt_pop.zsh" >> ~/.zshrc
 ```
 After cloning, you need to set up a keybinding in your .zshrc file to use PromptPop:
 

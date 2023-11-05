@@ -14,32 +14,34 @@ To install PromptPop, clone the repository and source the script in your `.zshrc
 ```sh
 git clone https://github.com/your-username/prompt_pop.git
 echo "source $(pwd)/prompt_pop/prompt_pop.zsh" >> ~/.zshrc
+```
 After cloning, you need to set up a keybinding in your .zshrc file to use PromptPop:
 
-sh
-Copy code
+```sh
 # Keybinding for PromptPop
 bindkey '^T' prompt_pop # Ctrl+T to trigger the function
+```
 Then, restart your terminal session or source your .zshrc file to apply the changes:
 
-sh
-Copy code
+```sh
 source ~/.zshrc
-Configuration
+```
+
+## Configuration
 PromptPop works out of the box, but you can customize its behavior through environment variables.
 
-Custom Temporary File Path
+### Custom Temporary File Path
 To change the default temporary file path used by PromptPop:
 
-sh
-Copy code
+```sh
 export PROMPT_POP_TEMP_FILE="/custom/path/to/temp_file.zsh"
-Custom Neovim Command
+```
+### Custom Neovim Command
 To customize the Neovim command (for example, to disable Copilot when opening the popup):
 
-sh
-Copy code
+```sh
 export PROMPT_POP_COMMAND="tmux display-popup -E -w 80% -h 80% nvim $PROMPT_POP_TEMP_FILE"
+```
 Add the above lines to your .zshrc file before the source command of the PromptPop script.
 
 Usage

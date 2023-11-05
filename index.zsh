@@ -13,3 +13,5 @@ prompt_pop() {
   CURSOR=$#BUFFER
   zle reset-prompt
 }
+
+zle -N prompt_pop

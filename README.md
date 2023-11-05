@@ -1,7 +1,46 @@
-*Prompt Pop*
-This is a simple script that I may use to see how one would share a command line tool. 
+# PromptPop
 
-I was thinking that the command that is run should be flexible, such that you could really run any process on the temp file, and it's file content would become your buffer
-after. 
+## Overview
+PromptPop is a utility for shell users who frequently edit their command line input within a full-fledged text editor. It captures the current command line buffer, opens it in Neovim within a Tmux popup window, and upon closing, applies any changes back to the command line buffer. This tool is especially handy for complex commands or multiline input.
 
-I have a working version in my dotfiles, this is more to document how this would be shared in a flexible, portable way.
+## Features
+- Opens your current shell buffer in Neovim within a Tmux popup.
+- Allows customization of the Neovim command and the temporary file path using environment variables.
+- Easy to install and configure.
+
+## Installation
+
+To install PromptPop, clone the repository and source the script in your `.zshrc` file:
+```sh
+git clone https://github.com/your-username/prompt_pop.git
+echo "source $(pwd)/prompt_pop/prompt_pop.zsh" >> ~/.zshrc
+After cloning, you need to set up a keybinding in your .zshrc file to use PromptPop:
+
+sh
+Copy code
+# Keybinding for PromptPop
+bindkey '^T' prompt_pop # Ctrl+T to trigger the function
+Then, restart your terminal session or source your .zshrc file to apply the changes:
+
+sh
+Copy code
+source ~/.zshrc
+Configuration
+PromptPop works out of the box, but you can customize its behavior through environment variables.
+
+Custom Temporary File Path
+To change the default temporary file path used by PromptPop:
+
+sh
+Copy code
+export PROMPT_POP_TEMP_FILE="/custom/path/to/temp_file.zsh"
+Custom Neovim Command
+To customize the Neovim command (for example, to disable Copilot when opening the popup):
+
+sh
+Copy code
+export PROMPT_POP_COMMAND="tmux display-popup -E -w 80% -h 80% nvim $PROMPT_POP_TEMP_FILE"
+Add the above lines to your .zshrc file before the source command of the PromptPop script.
+
+Usage
+Once installed and configured, simply press Ctrl+T (or the keybinding you've set) in your terminal to open the current command buffer in Neovim. Edit as required, and when you're done, save and exit Neovim to update the command buffer with your changes.

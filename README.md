@@ -1,5 +1,5 @@
 # PromptPop
-![Demo Animation](https://github.com/milesmmoran/prompt-pop/assets/85196453/71b59ef3-e493-485e-bf80-c145b9d92527)
+https://github.com/milesmmoran/prompt-pop/assets/85196453/71b59ef3-e493-485e-bf80-c145b9d92527
 
 om/a/nJrYkn1)
 ## Overview

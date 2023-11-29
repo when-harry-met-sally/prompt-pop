@@ -54,7 +54,8 @@ prompt_pop() {
   echo "$typed_command" > "$PROMPT_POP_FILE"
 
   if [[ -z $PROMPT_POP_COMMAND ]]; then
-    PROMPT_POP_COMMAND="tmux display-popup -E -w 80% -h 80% 'nvim \"$PROMPT_POP_FILE\"'"
+    # PROMPT_POP_COMMAND="tmux display-popup -E -w 80% -h 80% 'nvim \"$PROMPT_POP_FILE\"'"
+    PROMPT_POP_COMMAND="nvim \"$PROMPT_POP_FILE\""
     echo "PROMPT_POP_COMMAND was not set. Using default: $PROMPT_POP_COMMAND" >> $log_file
   else
     # Make sure to escape inner quotes correctly
@@ -69,6 +70,8 @@ prompt_pop() {
   CURSOR=$#BUFFER
   echo "Buffer updated. New buffer: $BUFFER" >> $log_file
   echo "New cursor position: $CURSOR" >> $log_file
+
+  tmux send-keys Enter
 
   zle reset-prompt
   echo "Prompt reset" >> $log_file

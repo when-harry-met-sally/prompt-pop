@@ -45,7 +45,7 @@ prompt_pop() {
   echo "Buffer contains: $typed_command" >> $log_file
 
   if [[ -z $PROMPT_POP_FILE ]]; then
-    PROMPT_POP_FILE="/tmp/prompt_pop.zsh"
+    PROMPT_POP_FILE="/tmp/prompt_pop.sh" # moved from zsh to sh (could make this dynamic)
     echo "PROMPT_POP_FILE was not set. Using default: $PROMPT_POP_FILE" >> $log_file
   else
     echo "PROMPT_POP_FILE is set to: '$PROMPT_POP_FILE'" >> $log_file

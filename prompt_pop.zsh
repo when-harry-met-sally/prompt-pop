@@ -9,14 +9,14 @@ prompt_pop() {
 
   echo "$typed_command" > "$PROMPT_POP_FILE"
 
-  nvim "$PROMPT_POP_FILE"
+  nvim -c setlocal buftype=nofile "$PROMPT_POP_FILE"
 
   BUFFER=$(<"$PROMPT_POP_FILE")
   CURSOR=$#BUFFER
   echo "Buffer updated. New buffer: $BUFFER" >> $log_file
   echo "New cursor position: $CURSOR" >> $log_file
 
-  tmux send-keys Enter
+  # tmux send-keys Enter
 
   zle reset-prompt
   echo "Prompt reset" >> $log_file

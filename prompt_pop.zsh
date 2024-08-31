@@ -9,8 +9,8 @@ prompt_pop() {
 
   echo "$typed_command" > "$PROMPT_POP_FILE"
 
-  # Use Neovim to edit the command with buftype set to nofile
-  nvim -c "setlocal buftype=nofile" "$PROMPT_POP_FILE"
+  # Use Neovim to edit the command and automatically save and quit
+  nvim -c "setlocal buftype=nofile | setlocal bufhidden=hide" -c "wq" "$PROMPT_POP_FILE"
 
   # Read the modified command back into the buffer
   BUFFER=$(<"$PROMPT_POP_FILE")

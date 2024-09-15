@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 prompt_pop() {
   local typed_command=$BUFFER
   local log_file="/tmp/prompt_pop.log" # Define log file path
